@@ -4,78 +4,6 @@ hide:
   - toc
 ---
 
-<style>
-/* Hero section */
-.agt-hero {
-  background: linear-gradient(135deg, #0078D4 0%, #005A9E 100%);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-.agt-hero h1 { color: white; border: none; margin: 0 0 0.5rem; font-size: 2rem; }
-.agt-hero p { color: rgba(255,255,255,0.9); font-size: 1.05rem; max-width: 700px; margin: 0 auto 1.5rem; }
-.agt-hero-badges { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-.agt-hero-badges a {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: background 0.2s;
-}
-.agt-hero-badges a:hover { background: rgba(255,255,255,0.25); }
-
-/* Card grid */
-.agt-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-.agt-card {
-  border: 1px solid #E0E0E0;
-  border-radius: 6px;
-  padding: 1.2rem;
-  transition: box-shadow 0.2s, border-color 0.2s;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-.agt-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: #0078D4;
-}
-.agt-card-title { display: block; margin: 0 0 0.4rem; font-size: 0.95rem; font-weight: 600; color: #0078D4; }
-.agt-card-desc { display: block; margin: 0; font-size: 0.82rem; color: #616161; }
-
-[data-md-color-scheme="slate"] .agt-card { border-color: #3A3A3E; }
-[data-md-color-scheme="slate"] .agt-card:hover { border-color: #4DB8FF; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-[data-md-color-scheme="slate"] .agt-card-title { color: #4DB8FF; }
-[data-md-color-scheme="slate"] .agt-card-desc { color: #B0B0B0; }
-[data-md-color-scheme="slate"] .agt-hero { background: linear-gradient(135deg, #1A3F5C 0%, #0D2137 100%); }
-
-/* Section headers */
-.agt-section { margin-top: 2.5rem; }
-.agt-section h2 { font-size: 1.3rem; }
-
-/* Stats row */
-.agt-stats {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin: 1.5rem 0 0;
-  flex-wrap: wrap;
-}
-.agt-stat { text-align: center; }
-.agt-stat-value { font-size: 1.5rem; font-weight: 700; color: white; display: block; }
-.agt-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
-</style>
-
 <div class="agt-hero" markdown>
 
 # Ship agents to production without losing sleep
@@ -95,10 +23,10 @@ pip install agent-governance-toolkit
 </div>
 
 <div class="agt-stats">
-  <div class="agt-stat"><span class="agt-stat-value">13,000+</span><span class="agt-stat-label">Tests</span></div>
+  <div class="agt-stat"><span class="agt-stat-value">1,590+</span><span class="agt-stat-label">GitHub Stars</span></div>
   <div class="agt-stat"><span class="agt-stat-value">10</span><span class="agt-stat-label">Formal Specs</span></div>
   <div class="agt-stat"><span class="agt-stat-value">5</span><span class="agt-stat-label">Languages</span></div>
-  <div class="agt-stat"><span class="agt-stat-value">20+</span><span class="agt-stat-label">Integrations</span></div>
+  <div class="agt-stat"><span class="agt-stat-value">19</span><span class="agt-stat-label">Integrations</span></div>
 </div>
 
 </div>
@@ -190,37 +118,45 @@ Every layer is optional. Start with `govern()` and add layers as your risk profi
 ## Packages
 
 <div class="agt-cards">
-<a class="agt-card" href="packages/agent-os.md">
-<span class="agt-card-title">⚙️ Agent OS</span>
-<span class="agt-card-desc">Policy engine, agent lifecycle, governance gate</span>
+<a class="agt-card" data-pkg="os" href="packages/agent-os.md">
+<img class="agt-card-icon" src="assets/icons/agent-os.svg" alt="Agent OS">
+<span class="agt-card-body"><span class="agt-card-title">Agent OS</span>
+<span class="agt-card-desc">Policy engine, agent lifecycle, governance gate</span></span>
 </a>
-<a class="agt-card" href="packages/agent-mesh.md">
-<span class="agt-card-title">🔗 Agent Mesh</span>
-<span class="agt-card-desc">Agent discovery, routing, and trust mesh</span>
+<a class="agt-card" data-pkg="mesh" href="packages/agent-mesh.md">
+<img class="agt-card-icon" src="assets/icons/agent-mesh.svg" alt="Agent Mesh">
+<span class="agt-card-body"><span class="agt-card-title">Agent Mesh</span>
+<span class="agt-card-desc">Agent discovery, routing, and trust mesh</span></span>
 </a>
-<a class="agt-card" href="packages/agent-runtime.md">
-<span class="agt-card-title">🛡️ Agent Runtime</span>
-<span class="agt-card-desc">Execution sandboxing with four privilege rings</span>
+<a class="agt-card" data-pkg="runtime" href="packages/agent-runtime.md">
+<img class="agt-card-icon" src="assets/icons/agent-runtime.svg" alt="Agent Runtime">
+<span class="agt-card-body"><span class="agt-card-title">Agent Runtime</span>
+<span class="agt-card-desc">Execution sandboxing with four privilege rings</span></span>
 </a>
-<a class="agt-card" href="packages/agent-sre.md">
-<span class="agt-card-title">📊 Agent SRE</span>
-<span class="agt-card-desc">Kill switch, SLO monitoring, chaos testing</span>
+<a class="agt-card" data-pkg="sre" href="packages/agent-sre.md">
+<img class="agt-card-icon" src="assets/icons/agent-sre.svg" alt="Agent SRE">
+<span class="agt-card-body"><span class="agt-card-title">Agent SRE</span>
+<span class="agt-card-desc">Kill switch, SLO monitoring, chaos testing</span></span>
 </a>
-<a class="agt-card" href="packages/agent-compliance.md">
-<span class="agt-card-title">✅ Agent Compliance</span>
-<span class="agt-card-desc">OWASP verification, policy linting, integrity checks</span>
+<a class="agt-card" data-pkg="compliance" href="packages/agent-compliance.md">
+<img class="agt-card-icon" src="assets/icons/agent-compliance.svg" alt="Agent Compliance">
+<span class="agt-card-body"><span class="agt-card-title">Agent Compliance</span>
+<span class="agt-card-desc">OWASP verification, policy linting, integrity checks</span></span>
 </a>
-<a class="agt-card" href="packages/agent-marketplace.md">
-<span class="agt-card-title">🏪 Agent Marketplace</span>
-<span class="agt-card-desc">Plugin governance and trust scoring</span>
+<a class="agt-card" data-pkg="marketplace" href="packages/agent-marketplace.md">
+<img class="agt-card-icon" src="assets/icons/agent-marketplace.svg" alt="Agent Marketplace">
+<span class="agt-card-body"><span class="agt-card-title">Agent Marketplace</span>
+<span class="agt-card-desc">Plugin governance and trust scoring</span></span>
 </a>
-<a class="agt-card" href="packages/agent-lightning.md">
-<span class="agt-card-title">⚡ Agent Lightning</span>
-<span class="agt-card-desc">RL training governance with violation penalties</span>
+<a class="agt-card" data-pkg="lightning" href="packages/agent-lightning.md">
+<img class="agt-card-icon" src="assets/icons/agent-lightning.svg" alt="Agent Lightning">
+<span class="agt-card-body"><span class="agt-card-title">Agent Lightning</span>
+<span class="agt-card-desc">RL training governance with violation penalties</span></span>
 </a>
-<a class="agt-card" href="packages/agent-hypervisor.md">
-<span class="agt-card-title">🔒 Agent Hypervisor</span>
-<span class="agt-card-desc">Execution audit, delta engine, commitment anchoring</span>
+<a class="agt-card" data-pkg="hypervisor" href="packages/agent-hypervisor.md">
+<img class="agt-card-icon" src="assets/icons/agent-hypervisor.svg" alt="Agent Hypervisor">
+<span class="agt-card-body"><span class="agt-card-title">Agent Hypervisor</span>
+<span class="agt-card-desc">Execution audit, delta engine, commitment anchoring</span></span>
 </a>
 </div>
 </div>
