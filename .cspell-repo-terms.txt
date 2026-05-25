@@ -37,6 +37,10 @@ bypassable
 bytecodes
 caas
 caplog
+ciphertext
+HMACSHA
+inheritdoc
+Linq
 capsys
 carloshvp
 carryforward
