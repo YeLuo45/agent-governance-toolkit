@@ -388,6 +388,12 @@ xfail
 xunit
 crds
 Dedup
+dedup
+dedupe
+eprintln
 Fprintf
 gfns
+peekable
+recognising
 Subresources
+subresources
