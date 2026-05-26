@@ -26,7 +26,7 @@ asctime
 aspnet
 asyncio
 atexit
-autobild
+autobuild
 autouse
 AWSIAM
 axios
