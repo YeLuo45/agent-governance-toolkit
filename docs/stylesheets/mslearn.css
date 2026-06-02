@@ -1441,6 +1441,7 @@ label.md-nav__link > .md-nav__icon::after {
 .agt-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   height: 32px;
   padding: 0 16px;
@@ -1455,6 +1456,12 @@ label.md-nav__link > .md-nav__icon::after {
               border-color 80ms cubic-bezier(0.33, 1, 0.68, 1),
               box-shadow 80ms cubic-bezier(0.33, 1, 0.68, 1),
               color 80ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Lock hero CTA label to 14px — wins over the later generic
+   `.agt-btn { font-size: 0.875rem }` in Section 20 (root font is scaled). */
+.agt-hero .agt-btn {
+  font-size: 14px;
 }
 
 /* Secondary / default Primer button — subtle elevation + inset highlight.
@@ -1563,8 +1570,16 @@ label.md-nav__link > .md-nav__icon::after {
 .agt-hero-install .md-code__button,
 .agt-hero-install .md-clipboard {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   opacity: 1;
   color: var(--mslearn-text-muted);
+}
+
+/* Center the masked copy glyph within the 32px button. */
+.agt-hero-install .md-code__button::after,
+.agt-hero-install .md-clipboard::after {
+  margin: 0;
 }
 .agt-hero-install .md-code__button:hover,
 .agt-hero-install .md-clipboard:hover {
