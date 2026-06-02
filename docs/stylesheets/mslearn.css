@@ -285,7 +285,8 @@ body,
 }
 
 /* Same treatment for the tabs row so its items align with the header
-   content above it (logo / search / repo info). */
+   content above it (logo / search / repo info). Items are centered
+   within the constrained container. */
 .md-tabs__list {
   max-width: 76rem;
   margin-left: auto;
@@ -293,6 +294,7 @@ body,
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
+  justify-content: center;
 }
 
 .md-header__title {
