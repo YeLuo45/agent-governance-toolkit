@@ -33,7 +33,7 @@ pip install agent-governance-toolkit[full]
     <span class="agt-action-label">PyPI</span>
     <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M3.5 3.5h6a.5.5 0 010 1H4.707l8.147 8.146a.5.5 0 01-.708.708L4 5.207V10a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z"/></svg>
   </a>
-  <a class="agt-action" href="tutorials/index/">
+  <a class="agt-action" href="tutorials/">
     <span class="agt-action-label">Tutorial</span>
     <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M3.5 3.5h6a.5.5 0 010 1H4.707l8.147 8.146a.5.5 0 01-.708.708L4 5.207V10a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z"/></svg>
   </a>

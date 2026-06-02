@@ -297,6 +297,16 @@ body,
   justify-content: center;
 }
 
+/* The sticky tabs row (.md-tabs) lives inside .md-header and carries
+   z-index: 3, while the language selector (.md-select) only establishes
+   a z-index: 1 stacking context. Within the shared header context that
+   makes the tabs paint OVER the open language dropdown. Lift the option
+   (and its dropdown panel) above the tabs so it overlays correctly. */
+.md-header__option {
+  position: relative;
+  z-index: 5;
+}
+
 .md-header__title {
   font-weight: var(--agt-fw-semibold);
   font-size: var(--agt-text-body-medium);
