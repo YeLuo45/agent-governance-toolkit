@@ -1390,7 +1390,7 @@ label.md-nav__link > .md-nav__icon::after {
 }
 
 .agt-hero h1 {
-  font-size: 48px;
+  font-size: 54px;
   font-weight: var(--agt-fw-semibold);
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -1435,101 +1435,140 @@ label.md-nav__link > .md-nav__icon::after {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  height: 40px;
-  padding: 0 1.1rem;
-  border-radius: 8px;
-  font-size: var(--agt-text-body-medium);
-  font-weight: var(--agt-fw-semibold);
-  line-height: 1;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
   text-decoration: none;
   white-space: nowrap;
   border: 1px solid transparent;
-  transition: background-color 120ms ease, border-color 120ms ease,
-              color 120ms ease, transform 80ms ease;
+  transition: background-color 80ms cubic-bezier(0.33, 1, 0.68, 1),
+              border-color 80ms cubic-bezier(0.33, 1, 0.68, 1),
+              box-shadow 80ms cubic-bezier(0.33, 1, 0.68, 1),
+              color 80ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-/* Secondary / default Primer button */
-.agt-btn-ghost {
-  background: var(--mslearn-bg, #FFFFFF);
-  color: var(--mslearn-text);
-  border-color: var(--mslearn-border);
+/* Secondary / default Primer button — subtle elevation + inset highlight.
+   `.agt-hero` prefix gives this enough specificity to win over the
+   generic `.agt-btn` base in Section 20 below. */
+.agt-hero .agt-btn-ghost {
+  background: #f6f8fa;
+  color: #24292f;
+  border-color: rgba(31, 35, 40, 0.15);
+  box-shadow:
+    0 1px 0 rgba(31, 35, 40, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.agt-btn-ghost:hover {
-  background: var(--mslearn-surface, #f6f8fa);
-  border-color: var(--mslearn-border);
-  color: var(--mslearn-text);
+.agt-hero .agt-btn-ghost:hover {
+  background: #f3f4f6;
+  border-color: rgba(31, 35, 40, 0.15);
+  color: #24292f;
   text-decoration: none;
 }
 
-[data-md-color-scheme="slate"] .agt-btn-ghost {
-  background: transparent;
-  color: var(--mslearn-text);
-  border-color: rgba(240, 246, 252, 0.18);
-}
-[data-md-color-scheme="slate"] .agt-btn-ghost:hover {
-  background: rgba(177, 186, 196, 0.12);
-  border-color: rgba(240, 246, 252, 0.3);
+.agt-hero .agt-btn-ghost:active {
+  background: #ebecf0;
+  border-color: rgba(31, 35, 40, 0.15);
+  box-shadow: inset 0 1px 0 rgba(208, 215, 222, 0.20);
+  transition: none;
 }
 
-/* Primary Primer button — brand purple */
-.agt-btn-solid {
+[data-md-color-scheme="slate"] .agt-hero .agt-btn-ghost {
+  background: #21262d;
+  color: #c9d1d9;
+  border-color: rgba(240, 246, 252, 0.1);
+  box-shadow: 0 0 transparent, 0 0 transparent;
+}
+[data-md-color-scheme="slate"] .agt-hero .agt-btn-ghost:hover {
+  background: #30363d;
+  border-color: #8b949e;
+  color: #c9d1d9;
+}
+
+/* Primary Primer button — brand purple with Primer-style elevation */
+.agt-hero .agt-btn-solid {
   background: var(--md-primary-fg-color);
   color: #FFFFFF;
-  border-color: var(--md-primary-fg-color);
+  border-color: rgba(31, 35, 40, 0.15);
+  box-shadow:
+    0 1px 0 rgba(31, 35, 40, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-.agt-btn-solid:hover {
+.agt-hero .agt-btn-solid:hover {
   background: var(--md-primary-fg-color--dark, #6f42c1);
-  border-color: var(--md-primary-fg-color--dark, #6f42c1);
+  border-color: rgba(31, 35, 40, 0.15);
   color: #FFFFFF;
   text-decoration: none;
 }
 
-.agt-btn:active { transform: translateY(0.5px); }
+.agt-hero .agt-btn-solid:active {
+  background: var(--md-primary-fg-color--dark, #6f42c1);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.15);
+  transition: none;
+}
 
-.agt-btn:focus-visible {
+[data-md-color-scheme="slate"] .agt-hero .agt-btn-solid {
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.agt-hero .agt-btn:focus-visible {
   outline: 2px solid var(--md-primary-fg-color);
   outline-offset: 2px;
 }
 
-/* Mock code preview chip */
-.agt-hero-code {
-  display: inline-block;
-  text-align: left;
-  background: var(--mslearn-surface, #f6f8fa) !important;
-  border: 1px solid var(--mslearn-border);
-  border-radius: 10px;
-  padding: 1rem 1.25rem !important;
-  margin: 0 auto 2.25rem !important;
-  max-width: min(640px, 100%);
+/* Hero install snippet — real fenced code block so Material auto-injects
+   the clipboard copy button. We constrain width and center the wrapper so
+   it visually matches the rest of the hero. */
+.agt-hero-install {
+  max-width: min(560px, 100%);
   width: 100%;
-  font-family: var(--agt-font-mono);
-  font-size: var(--agt-text-body-medium);
-  color: var(--mslearn-text);
-  line-height: 1.7;
+  margin: 0 auto 2.25rem;
+  text-align: left;
+}
+
+.agt-hero-install .highlight,
+.agt-hero-install pre {
+  margin: 0 !important;
+  border-radius: 10px;
+  border: 1px solid var(--mslearn-border);
   box-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
-  white-space: pre;
-  overflow: hidden;
+  background: var(--mslearn-surface, #f6f8fa) !important;
 }
 
-.agt-hero-code code {
+.agt-hero-install pre > code {
   background: transparent !important;
-  padding: 0 !important;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
+  font-family: var(--agt-font-mono);
+  font-size: 14px;
+  color: var(--mslearn-text);
+  padding: 14px 16px !important;
+  display: block;
 }
 
-/* The hero code chip is decorative — never show Material's copy button. */
-.agt-hero-code .md-clipboard,
-.agt-hero-code + .md-clipboard,
-.agt-hero-code .md-code__nav,
-.agt-hero-code .md-code__button {
-  display: none !important;
+/* Make Material's modern code-nav copy button always visible on the
+   hero snippet. Material's newer template renders
+   `<nav class="md-code__nav"><button class="md-code__button" data-md-type="copy">`
+   instead of the legacy `.md-clipboard`. */
+.agt-hero-install .md-code__nav,
+.agt-hero-install .md-code__button,
+.agt-hero-install .md-clipboard {
+  display: inline-flex;
+  opacity: 1;
+  color: var(--mslearn-text-muted);
+}
+.agt-hero-install .md-code__button:hover,
+.agt-hero-install .md-clipboard:hover {
+  color: var(--md-primary-fg-color);
 }
 
-.agt-hero-code .k { color: var(--md-primary-fg-color); }
+[data-md-color-scheme="slate"] .agt-hero-install .highlight,
+[data-md-color-scheme="slate"] .agt-hero-install pre {
+  background: rgba(177, 186, 196, 0.06) !important;
+  border-color: rgba(240, 246, 252, 0.1);
+}
 
 /* Three outline action cards */
 .agt-hero-actions {

@@ -20,9 +20,13 @@ hide:
   <a class="agt-btn agt-btn-solid" href="quickstart/">Quick Start</a>
 </div>
 
-<pre class="agt-hero-code" aria-hidden="true"><code><span class="k">framework</span>: langchain
-<span class="k">entrypoint</span>: app.agent:run
-<span class="k">variants</span>: [gpt-4o, claude-3-5-sonnet]</code></pre>
+<div class="agt-hero-install" markdown>
+
+```bash
+pip install agent-governance-toolkit[full]
+```
+
+</div>
 
 <div class="agt-hero-actions">
   <a class="agt-action" href="https://pypi.org/project/agent-governance-toolkit/">
