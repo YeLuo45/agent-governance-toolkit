@@ -303,16 +303,24 @@ body,
   padding: 0 !important;
 }
 
-/* Logo: keep at native size, tight against the title */
+/* Logo: keep at native size, tight against the title. Drop the right
+   padding so the product name sits flush next to the icon. */
 .md-header__button.md-logo {
   margin: 0;
-  padding: 0.375rem;
+  padding: 0.375rem 0 0.375rem 0.375rem;
 }
 
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   width: 24px;
   height: 24px;
+}
+
+/* The site title acts as part of the home link — make it look clickable.
+   A small left gap keeps the text from touching the icon. */
+.md-header__title {
+  cursor: pointer;
+  margin-left: 0.375rem !important;
 }
 
 /* Header content (logo, title, search input, icons) inherits text color */
